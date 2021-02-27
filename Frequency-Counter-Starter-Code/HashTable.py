@@ -27,7 +27,7 @@ class HashTable:
   # Hash functions are a function that turns each of these keys into an index value that we can use to decide where in our list each key:value pair should be stored. 
 
   def hash_func(self, key):
-    first_letter = key[0].lower
+    first_letter = key[0].lower()
     distance = ord(first_letter) - ord('a')
     index = distance % self.size
     return index
