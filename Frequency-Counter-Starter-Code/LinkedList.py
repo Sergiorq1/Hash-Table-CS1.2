@@ -23,7 +23,6 @@ class LinkedList:
 
       if current.data[0] == item:
         found = True
-        return current.data
       else:
         current = current.next
         counter += 1
@@ -32,7 +31,21 @@ class LinkedList:
       return counter
     else:
       return -1
+      
+  def update(self, key, value):
 
+    current = self.head
+
+    found = False
+    counter = 0
+
+    while current != None and not found:
+
+      if current.data[0] == key:
+        current.data = (current.data[0], current.data[1]+1)
+      else:
+        current = current.next
+        counter += 1
 
 
   def length(self):
