@@ -27,14 +27,13 @@ class HashTable:
   # Hash functions are a function that turns each of these keys into an index value that we can use to decide where in our list each key:value pair should be stored. 
 
   def hash_func(self, key):
-    first_letter = key[0].lower()
-    distance = ord(first_letter) - ord('a')
-    index = distance % self.size
+    # Adds int values of each letter of the key
+    key.lower()
+    addition_of_chars = 0
+    for i in range(len(key)):
+      addition_of_chars += ord(key[i]) 
+      index = addition_of_chars % self.size
     return index
-
-
-
-
 
   # 3️⃣ TODO: Complete the insert method.
 
@@ -74,6 +73,4 @@ class HashTable:
     for ll in self.arr:
       ll.print_nodes()
       print('Next linkedlist')
-
-
 

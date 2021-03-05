@@ -13,7 +13,6 @@ class LinkedList:
 
 
   def find(self,item):
-
     current = self.head
 
     found = False
@@ -33,22 +32,22 @@ class LinkedList:
       return -1
       
   def update(self, key, value):
-
+    ''' Update method is used to update the value of a key when the key already exist in the linkedlist'''
     current = self.head
-
     found = False
     counter = 0
 
     while current != None and not found:
-
       if current.data[0] == key:
-        current.data = (current.data[0], current.data[1]+1)
+        current.data = (current.data[0], current.data[1] + 1)
+        found = True
       else:
         current = current.next
         counter += 1
 
 
   def length(self):
+
     if self.head == None:
       return 0
     else:
@@ -67,5 +66,5 @@ class LinkedList:
       print('The linked list is empty.')
     else:
       for i in range(self.length()):
-        print(f'Node {i}: {current.data}')
+        print(f'{current.data[0]}: {current.data[1]}')
         current = current.next
